@@ -1,9 +1,18 @@
-﻿DROP TABLE IF EXISTS Pessoas;
-DROP TABLE IF EXISTS Conhecidos;
+﻿DROP TABLE IF EXISTS Conhecidos;
+DROP TABLE IF EXISTS Razao_de_bloqueio;
+DROP TABLE IF EXISTS Razao;
+DROP TABLE IF EXISTS Outras;
+DROP TABLE IF EXISTS Bloqueio;
+DROP TABLE IF EXISTS Curtidas;
+DROP TABLE IF EXISTS Musico;
 DROP TABLE IF EXISTS Artista_musical;
+DROP TABLE IF EXISTS Curtidas;
+DROP TABLE IF EXISTS Pessoas;
 
 CREATE TABLE Pessoas (
-	login VARCHAR (200) NOT NULL PRIMARY KEY
+	login VARCHAR (200) NOT NULL PRIMARY KEY,
+	nome VARCHAR (200) NOT NULL,
+	cidade VARCHAR (200) NOT NULL
 );
 
 CREATE TABLE Conhecidos (
@@ -14,6 +23,8 @@ CREATE TABLE Conhecidos (
 CREATE TABLE Razao(
 	razao VARCHAR (200) NOT NULL PRIMARY KEY
 );
+
+INSERT INTO Razao (razao) VALUES ('spammer'),('conteudo abusivo'),('motivos pessoais');
 
 CREATE TABLE Bloqueio (
 	id SERIAL NOT NULL PRIMARY KEY,
