@@ -43,11 +43,17 @@ CREATE TABLE Outras(
 );
 
 CREATE TABLE Artista_musical(
-	tipo VARCHAR,
-	id SERIAL NOT NULL PRIMARY KEY
+	id SERIAL NOT NULL PRIMARY KEY,	
+	nome_artistico VARCHAR (200),
+	pais VARCHAR(200),
+	genero VARCHAR (200),
+	tipo VARCHAR	
 );
 
 CREATE TABLE Musico(
+	nome_real VARCHAR(200),
+	estilo_musical VARCHAR(200),
+	data_nascimento TIMESTAMP,
 	artista INT REFERENCES Artista_musical
 );
 
